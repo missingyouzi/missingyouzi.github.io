@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-  <title>C | My_Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先，十分感谢阮**小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的((摊手))现在趁着我还记得一点使用hexo和github的坑，请参照2个网页：hexo入门指南http://www.maintao.com/2014/hexo-beginner%27s-guide/
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="首先，十分感谢阮**小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的((摊手))现在趁着我还记得一点使用hexo和github的坑，请参照2个网页：hexo入门指南http://www.maintao.com/2014/hexo-beginner%27s-guide/
 手把手教你用Hexo+Github 搭建属于自己的博客 - gdutxiaoxu的博客 - CSD">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C">
@@ -18,81 +19,122 @@
 <meta name="twitter:title" content="C">
 <meta name="twitter:description" content="首先，十分感谢阮**小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的((摊手))现在趁着我还记得一点使用hexo和github的坑，请参照2个网页：hexo入门指南http://www.maintao.com/2014/hexo-beginner%27s-guide/
 手把手教你用Hexo+Github 搭建属于自己的博客 - gdutxiaoxu的博客 - CSD">
-  
-    <link rel="alternate" href="/atom.xml" title="My_Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <!--<link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>C</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
 </head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">My_Blog</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">ZQ&#39;s_Blog</a>
-        </h2>
-      
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/probberechts">Projects</a></li>
+         
+          <li><a href="/URL">LINK_NAME</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2017/08/11/Spider-python/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=missingyouzi.github.io/2017/08/11/C/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=missingyouzi.github.io/2017/08/11/C/&text=C"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=missingyouzi.github.io/2017/08/11/C/&title=C"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=missingyouzi.github.io/2017/08/11/C/&is_video=false&description=C"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=C&body=Check out this article: missingyouzi.github.io/2017/08/11/C/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=missingyouzi.github.io/2017/08/11/C/&title=C"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=missingyouzi.github.io/2017/08/11/C/&title=C"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=missingyouzi.github.io/2017/08/11/C/&title=C"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=missingyouzi.github.io/2017/08/11/C/&title=C"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=missingyouzi.github.io/2017/08/11/C/&name=C&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="missingyouzi.github.io"></form>
-      </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#首先，十分感谢阮-小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的-摊手"><span class="toc-number">1.</span> <span class="toc-text">首先，十分感谢阮**小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的((摊手))</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#现在趁着我还记得一点使用hexo和github的坑，请参照2个网页："><span class="toc-number">1.1.</span> <span class="toc-text">现在趁着我还记得一点使用hexo和github的坑，请参照2个网页：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其次，首先创建一个hexo文件夹，在npm-install-hexo-cli-g-和-npm-install-hexo-–save-之后请重新创建一个文件夹用于hexo的初始化，之后可以把第一个文件夹里的东西剪切过来"><span class="toc-number">1.2.</span> <span class="toc-text">其次，首先创建一个hexo文件夹，在npm install hexo-cli -g 和 npm install hexo –save 之后请重新创建一个文件夹用于hexo的初始化，之后可以把第一个文件夹里的东西剪切过来</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些可能没用的东西"><span class="toc-number">2.</span> <span class="toc-text">一些可能没用的东西:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#判断类型"><span class="toc-number">2.0.1.</span> <span class="toc-text">判断类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#断言"><span class="toc-number">2.0.2.</span> <span class="toc-text">断言:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用函数"><span class="toc-number">2.0.3.</span> <span class="toc-text">常用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#windows-API"><span class="toc-number">2.0.4.</span> <span class="toc-text">windows API</span></a></li></ol></li></ol></li></ol>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-C" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/11/C/" class="article-date">
-  <time datetime="2017-08-11T06:22:01.000Z" itemprop="datePublished">2017-08-11</time>
-</a>
+  </span>
+</div>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="content index width mx-auto px2 my4">
         
-  
-    <h1 class="article-title" itemprop="name">
-      C
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        C
     </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">My_Blog</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-08-11T06:22:01.000Z" itemprop="datePublished">2017-08-11</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="首先，十分感谢阮-小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的-摊手"><a href="#首先，十分感谢阮-小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的-摊手" class="headerlink" title="首先，十分感谢阮**小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的((摊手))"></a><strong>首先，十分感谢阮**小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的((摊手))</strong></h1><h2 id="现在趁着我还记得一点使用hexo和github的坑，请参照2个网页："><a href="#现在趁着我还记得一点使用hexo和github的坑，请参照2个网页：" class="headerlink" title="现在趁着我还记得一点使用hexo和github的坑，请参照2个网页："></a>现在趁着我还记得一点使用hexo和github的坑，请参照2个网页：</h2><p>hexo入门指南<br><a href="http://note.youdao.com/" target="_blank" rel="external">http://www.maintao.com/2014/hexo-beginner%27s-guide/</a></p>
+  <div class="content" itemprop="articleBody">
+    <h1 id="首先，十分感谢阮-小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的-摊手"><a href="#首先，十分感谢阮-小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的-摊手" class="headerlink" title="首先，十分感谢阮**小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的((摊手))"></a><strong>首先，十分感谢阮**小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的((摊手))</strong></h1><h2 id="现在趁着我还记得一点使用hexo和github的坑，请参照2个网页："><a href="#现在趁着我还记得一点使用hexo和github的坑，请参照2个网页：" class="headerlink" title="现在趁着我还记得一点使用hexo和github的坑，请参照2个网页："></a>现在趁着我还记得一点使用hexo和github的坑，请参照2个网页：</h2><p>hexo入门指南<br><a href="http://note.youdao.com/" target="_blank" rel="external">http://www.maintao.com/2014/hexo-beginner%27s-guide/</a></p>
 <p>手把手教你用Hexo+Github 搭建属于自己的博客 - gdutxiaoxu的博客 - CSDN博客<br><a href="http://note.youdao.com/" target="_blank" rel="external">http://blog.csdn.net/gdutxiaoxu/article/details/53576018</a></p>
 <h2 id="其次，首先创建一个hexo文件夹，在npm-install-hexo-cli-g-和-npm-install-hexo-–save-之后请重新创建一个文件夹用于hexo的初始化，之后可以把第一个文件夹里的东西剪切过来"><a href="#其次，首先创建一个hexo文件夹，在npm-install-hexo-cli-g-和-npm-install-hexo-–save-之后请重新创建一个文件夹用于hexo的初始化，之后可以把第一个文件夹里的东西剪切过来" class="headerlink" title="其次，首先创建一个hexo文件夹，在npm install hexo-cli -g 和 npm install hexo –save 之后请重新创建一个文件夹用于hexo的初始化，之后可以把第一个文件夹里的东西剪切过来"></a>其次，首先创建一个hexo文件夹，在npm install hexo-cli -g 和 npm install hexo –save 之后请重新创建一个文件夹用于hexo的初始化，之后可以把第一个文件夹里的东西剪切过来</h2><p>然后在配置sshkey的时候注意点就好了</p>
 <h1 id="一些可能没用的东西"><a href="#一些可能没用的东西" class="headerlink" title="一些可能没用的东西:"></a>一些可能没用的东西:</h1><p>二进制:<br>原码，反码，补码<br>正数都相同，负数反码为原码反转所有数，补码 = 原码 + 1<br>按位逻辑运算符：<br>二进制反码或按位取反：~<br>按位与：&amp;<br>按位或：|<br>按位异或：^</p>
@@ -104,113 +146,111 @@
 <h3 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;conio.h&gt;</span></span></div><div class="line">system(<span class="string">"cls"</span>);</div><div class="line">system(<span class="string">"title 输出标题"</span>);</div><div class="line">system(<span class="string">"color 16进制自己去网上查"</span>);</div><div class="line">system(<span class="string">"mode con cols=20 lines=20"</span>);</div><div class="line">system(<span class="string">"pause"</span>);</div><div class="line">Sleep(<span class="number">2000</span>);	<span class="comment">//2秒后继续</span></div><div class="line">getchar()返回值为<span class="keyword">int</span></div><div class="line">所以以下代码会出现问题</div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">char</span> ch;</div><div class="line">	<span class="keyword">while</span>(ch = getchar() != <span class="string">'#'</span>)</div><div class="line">		<span class="built_in">putchar</span>();</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line">正确代码应该是:</div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">char</span> ch;</div><div class="line">	<span class="keyword">while</span>((ch = getchar()) != <span class="string">'#'</span>)</div><div class="line">		<span class="built_in">putchar</span>();</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>数据结构：<br>    二叉树：<br>        完全二叉树，满二叉树<br>    链表<br>    结构体</p>
 <h3 id="windows-API"><a href="#windows-API" class="headerlink" title="windows API"></a>windows API</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">	MessageBox(<span class="literal">NULL</span>,<span class="string">"maincontent"</span>,<span class="string">"title"</span>,MB_YESNO)</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">hide</span><span class="params">()</span></span>&#123;	<span class="comment">//隐藏CMD,话说以前想做病毒来着（突然想起）</span></div><div class="line">	HWND hwnd;</div><div class="line">	hwnd = FindWindow(<span class="string">"ConsoleWindowsClass"</span>,<span class="literal">NULL</span>);</div><div class="line">	<span class="keyword">if</span>(hwnd)&#123;</div><div class="line">		ShowOwnedPopups(hwnd,SW_HIDE);</div><div class="line">		ShowWindow(hwnd,SW_HIDE);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="missingyouzi.github.io/2017/08/11/C/" data-id="cj7q1s10p00005kd0qn053cu8" class="article-share-link">Share</a>
-      
-      
-    </footer>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2017/08/11/Spider-python/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Second Day
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-  
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li></ul>
     </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
       <ul>
-        
-          <li>
-            <a href="/2017/09/18/JavaBased/">JavaBased</a>
-          </li>
-        
-          <li>
-            <a href="/2017/09/18/Python-based/">Python_based</a>
-          </li>
-        
-          <li>
-            <a href="/2017/08/11/Spider-python/">Second Day</a>
-          </li>
-        
-          <li>
-            <a href="/2017/08/11/C/">C</a>
-          </li>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/probberechts">Projects</a></li>
+         
+          <li><a href="/URL">LINK_NAME</a></li>
         
       </ul>
     </div>
-  </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 ZQ<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#首先，十分感谢阮-小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的-摊手"><span class="toc-number">1.</span> <span class="toc-text">首先，十分感谢阮**小姐姐，让我知道hexo能够搭建博客（差点入了django大坑，虽然以后也会入的((摊手))</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#现在趁着我还记得一点使用hexo和github的坑，请参照2个网页："><span class="toc-number">1.1.</span> <span class="toc-text">现在趁着我还记得一点使用hexo和github的坑，请参照2个网页：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其次，首先创建一个hexo文件夹，在npm-install-hexo-cli-g-和-npm-install-hexo-–save-之后请重新创建一个文件夹用于hexo的初始化，之后可以把第一个文件夹里的东西剪切过来"><span class="toc-number">1.2.</span> <span class="toc-text">其次，首先创建一个hexo文件夹，在npm install hexo-cli -g 和 npm install hexo –save 之后请重新创建一个文件夹用于hexo的初始化，之后可以把第一个文件夹里的东西剪切过来</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些可能没用的东西"><span class="toc-number">2.</span> <span class="toc-text">一些可能没用的东西:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#判断类型"><span class="toc-number">2.0.1.</span> <span class="toc-text">判断类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#断言"><span class="toc-number">2.0.2.</span> <span class="toc-text">断言:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用函数"><span class="toc-number">2.0.3.</span> <span class="toc-text">常用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#windows-API"><span class="toc-number">2.0.4.</span> <span class="toc-text">windows API</span></a></li></ol></li></ol></li></ol>
     </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=missingyouzi.github.io/2017/08/11/C/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=missingyouzi.github.io/2017/08/11/C/&text=C"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=missingyouzi.github.io/2017/08/11/C/&title=C"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=missingyouzi.github.io/2017/08/11/C/&is_video=false&description=C"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=C&body=Check out this article: missingyouzi.github.io/2017/08/11/C/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=missingyouzi.github.io/2017/08/11/C/&title=C"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=missingyouzi.github.io/2017/08/11/C/&title=C"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=missingyouzi.github.io/2017/08/11/C/&title=C"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=missingyouzi.github.io/2017/08/11/C/&title=C"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=missingyouzi.github.io/2017/08/11/C/&name=C&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2017 ZQ
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/probberechts">Projects</a></li>
+         
+          <li><a href="/URL">LINK_NAME</a></li>
+        
+      </ul>
+    </nav>
   </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
 
-<script src="/js/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
 </body>
 </html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
