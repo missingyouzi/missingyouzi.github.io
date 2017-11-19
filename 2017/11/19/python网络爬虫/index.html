@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="python3网络爬虫,注:以下均在python3.6.3下编写并确认无误,其他版本不能保证无误参考书籍: 用python写网络爬虫
+参考课程: Python网络爬虫实战
+一、爬虫简介1.网络爬虫的具体用途:需要频繁地查看某种可见资源(股市, 商品价格等),由于人工查看成本过大,故可以采用网络爬虫来获取到想要地资源
+2.爬虫是否合法网络爬虫还处在早期地蛮荒阶段,但是应该注意版权问题
+3.背景调研大">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python网络爬虫">
+<meta property="og:url" content="missingyouzi.github.io/2017/11/19/python网络爬虫/index.html">
+<meta property="og:site_name" content="My_Blog">
+<meta property="og:description" content="python3网络爬虫,注:以下均在python3.6.3下编写并确认无误,其他版本不能保证无误参考书籍: 用python写网络爬虫
+参考课程: Python网络爬虫实战
+一、爬虫简介1.网络爬虫的具体用途:需要频繁地查看某种可见资源(股市, 商品价格等),由于人工查看成本过大,故可以采用网络爬虫来获取到想要地资源
+2.爬虫是否合法网络爬虫还处在早期地蛮荒阶段,但是应该注意版权问题
+3.背景调研大">
+<meta property="og:updated_time" content="2017-11-19T13:04:23.895Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python网络爬虫">
+<meta name="twitter:description" content="python3网络爬虫,注:以下均在python3.6.3下编写并确认无误,其他版本不能保证无误参考书籍: 用python写网络爬虫
+参考课程: Python网络爬虫实战
+一、爬虫简介1.网络爬虫的具体用途:需要频繁地查看某种可见资源(股市, 商品价格等),由于人工查看成本过大,故可以采用网络爬虫来获取到想要地资源
+2.爬虫是否合法网络爬虫还处在早期地蛮荒阶段,但是应该注意版权问题
+3.背景调研大">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>python网络爬虫</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/probberechts">Projects</a></li>
+         
+          <li><a href="/URL">LINK_NAME</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2017/11/19/DataBased/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=missingyouzi.github.io/2017/11/19/python网络爬虫/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&text=python网络爬虫"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&title=python网络爬虫"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&is_video=false&description=python网络爬虫"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=python网络爬虫&body=Check out this article: missingyouzi.github.io/2017/11/19/python网络爬虫/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&title=python网络爬虫"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&title=python网络爬虫"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&title=python网络爬虫"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&title=python网络爬虫"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&name=python网络爬虫&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python3网络爬虫-注-以下均在python3-6-3下编写并确认无误-其他版本不能保证无误"><span class="toc-number">1.</span> <span class="toc-text">python3网络爬虫,注:以下均在python3.6.3下编写并确认无误,其他版本不能保证无误</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、爬虫简介"><span class="toc-number">1.1.</span> <span class="toc-text">一、爬虫简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-网络爬虫的具体用途"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">1.网络爬虫的具体用途:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-爬虫是否合法"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">2.爬虫是否合法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-背景调研"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">3.背景调研</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-识别网站所用技术"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">4.识别网站所用技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-寻找网站所有者"><span class="toc-number">1.1.0.5.</span> <span class="toc-text">5.寻找网站所有者</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写第一个网络爬虫"><span class="toc-number">1.1.1.</span> <span class="toc-text">编写第一个网络爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-下载网页"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1.下载网页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-代理"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">3.代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-网站地图爬虫"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">4.网站地图爬虫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-ID遍历爬虫"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">5.ID遍历爬虫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#高级功能"><span class="toc-number">1.1.1.5.</span> <span class="toc-text">高级功能</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、数据抓取"><span class="toc-number">1.2.</span> <span class="toc-text">二、数据抓取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分析网页"><span class="toc-number">1.2.1.</span> <span class="toc-text">分析网页</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-分析网页"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">1.分析网页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-三种网页抓取方法"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">2.三种网页抓取方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-正则表达式"><span class="toc-number">1.2.1.2.1.</span> <span class="toc-text">(1)正则表达式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-BeautifulSoup"><span class="toc-number">1.2.1.2.2.</span> <span class="toc-text">(2)BeautifulSoup</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-Lxml"><span class="toc-number">1.2.1.2.3.</span> <span class="toc-text">(3)Lxml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-给爬虫添加回调函数"><span class="toc-number">1.2.1.2.4.</span> <span class="toc-text">(4)给爬虫添加回调函数</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        python网络爬虫
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">My_Blog</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-11-19T13:04:08.000Z" itemprop="datePublished">2017-11-19</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="python3网络爬虫-注-以下均在python3-6-3下编写并确认无误-其他版本不能保证无误"><a href="#python3网络爬虫-注-以下均在python3-6-3下编写并确认无误-其他版本不能保证无误" class="headerlink" title="python3网络爬虫,注:以下均在python3.6.3下编写并确认无误,其他版本不能保证无误"></a>python3网络爬虫,注:以下均在python3.6.3下编写并确认无误,其他版本不能保证无误</h1><p>参考书籍: 用python写网络爬虫</p>
+<p>参考课程: <a href="https://study.163.com/course/courseMain.htm?courseId=1003285002" target="_blank" rel="external">Python网络爬虫实战</a></p>
+<h2 id="一、爬虫简介"><a href="#一、爬虫简介" class="headerlink" title="一、爬虫简介"></a>一、爬虫简介</h2><h4 id="1-网络爬虫的具体用途"><a href="#1-网络爬虫的具体用途" class="headerlink" title="1.网络爬虫的具体用途:"></a>1.网络爬虫的具体用途:</h4><p>需要频繁地查看某种可见资源(股市, 商品价格等),由于人工查看成本过大,故可以采用网络爬虫来获取到想要地资源</p>
+<h4 id="2-爬虫是否合法"><a href="#2-爬虫是否合法" class="headerlink" title="2.爬虫是否合法"></a>2.爬虫是否合法</h4><p>网络爬虫还处在早期地蛮荒阶段,但是应该注意版权问题</p>
+<h4 id="3-背景调研"><a href="#3-背景调研" class="headerlink" title="3.背景调研"></a>3.背景调研</h4><p>大多数网站都会定义一个<strong>robots.txt</strong>的文件,这样可以让爬虫了解爬取该网站时存在哪些限制,在爬取之前检查该文件可以最小化爬虫被封禁的可能,还能发现和网站结构相关地线索,关于<strong>robots.txt</strong>具体可参见 <a href="http://www.robotstxt.org" target="_blank" rel="external">The Web Robots Pages</a></p>
+<h4 id="4-识别网站所用技术"><a href="#4-识别网站所用技术" class="headerlink" title="4.识别网站所用技术"></a>4.识别网站所用技术</h4><p>python有一个模块可以帮助我们识别——builtwith, 安装方法为打开cmd(linux和unix用户打开终端)输入以下代码:</p>
+<pre><code>pip install builtwith
+</code></pre><p>使用方法如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 请在idle中输入以下两行</span></div><div class="line"><span class="keyword">import</span> builtwith</div><div class="line">builtwith.parse(<span class="string">'http://example.webscraping.com'</span>)</div><div class="line"><span class="comment"># &#123;'web-servers': ['Nginx'], 'web-frameworks': ['Web2py', 'Twitter Bootstrap'], 'programming-languages': ['Python'], 'javascript-frameworks': ['jQuery', 'Modernizr', 'jQuery UI']&#125;</span></div></pre></td></tr></table></figure></p>
+<h4 id="5-寻找网站所有者"><a href="#5-寻找网站所有者" class="headerlink" title="5.寻找网站所有者"></a>5.寻找网站所有者</h4><p>python中有一个针对该协议的封装库—— python-whois<br>安装方法同上</p>
+<pre><code>pip install python-whois
+</code></pre><p>使用方法如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> whois</div><div class="line">print(whois.whois(<span class="string">'baidu.com'</span>)) <span class="comment"># 额,结果太长了,这里我就不贴出来了</span></div></pre></td></tr></table></figure></p>
+<h3 id="编写第一个网络爬虫"><a href="#编写第一个网络爬虫" class="headerlink" title="编写第一个网络爬虫"></a>编写第一个网络爬虫</h3><p>三种爬取网站的常见方法:<br>1.爬取网站地图</p>
+<p>2.遍历每个网页地数据库ID</p>
+<p>3.跟踪网页链接</p>
+<h4 id="1-下载网页"><a href="#1-下载网页" class="headerlink" title="1.下载网页"></a>1.下载网页</h4><p>python3中废除了urllib2这个爬虫库,让它和urllib合并了,具体urllib库的使用可参考<a href="http://www.cnblogs.com/Lands-ljk/p/5447127.html" target="_blank" rel="external">http://www.cnblogs.com/Lands-ljk/p/5447127.html</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line"><span class="comment"># 传入url参数下载该网页</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(url)</span>:</span></div><div class="line">    <span class="keyword">return</span> urllib.request.urlopen(url).read()</div><div class="line"><span class="comment"># 上面那个函数存在一个问题,没有考虑到一些我们无法控制地情况(如请求的网页不存在),这种情况会导致urllib抛出异常并退出脚本</span></div><div class="line"><span class="comment"># 下面是改进</span></div><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line"><span class="comment"># 导入urllib地异常处理类</span></div><div class="line"><span class="keyword">import</span> urllib.error</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">downloadImprove</span><span class="params">(url)</span>:</span></div><div class="line">    print(<span class="string">'Downloading...'</span>, url)</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        html = urllib.request.urlopen(url).read()</div><div class="line">    <span class="keyword">except</span> urllib.error.HTTPError <span class="keyword">as</span> e:</div><div class="line">        print(<span class="string">'Download error'</span>, e.reason)</div><div class="line">        html = <span class="keyword">None</span></div><div class="line">    <span class="keyword">return</span> html</div></pre></td></tr></table></figure></p>
+<p>####　2.重试下载<br>各种http错误可以参考: <a href="https://tools.ietf.org/html/rfc7231#section-6" target="_blank" rel="external">RFC 7231 - Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</a><br><strong>不过排版有点……</strong></p>
+<p>在众多的 http 错误中我们只需要判断发生5xx错误的时候重新下载便可<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request</div><div class="line"><span class="keyword">import</span> urllib.error</div><div class="line"><span class="comment"># num=2表示重试的次数为2,该函数是一个递归函数</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(url, num=<span class="number">2</span>)</span>:</span></div><div class="line">    print(<span class="string">'Downloading:...'</span>)</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        html = urllib.request.urlopen(url).read()</div><div class="line">    <span class="keyword">except</span> urllib.error <span class="keyword">as</span> e:</div><div class="line">        print(<span class="string">'Download error:'</span>, e.reason)</div><div class="line">        html = <span class="keyword">None</span></div><div class="line">        <span class="keyword">if</span> num &gt; <span class="number">0</span>:</div><div class="line">            <span class="keyword">if</span> hasattr(e, <span class="string">'code'</span>) <span class="keyword">and</span> <span class="number">500</span> &lt;= e.code &lt;= <span class="number">600</span>:</div><div class="line">                <span class="keyword">return</span> download(url, num - <span class="number">1</span>)</div></pre></td></tr></table></figure></p>
+<h4 id="3-代理"><a href="#3-代理" class="headerlink" title="3.代理"></a>3.代理</h4><p>此处建议使用<strong>requests模块</strong>,<br>现在urllib.request不支持通过代理访问一个https网址。不过，可以通过这篇<a href="https://code.activestate.com/recipes/456195/" target="_blank" rel="external">教程</a>实现</p>
+<h4 id="4-网站地图爬虫"><a href="#4-网站地图爬虫" class="headerlink" title="4.网站地图爬虫"></a>4.网站地图爬虫</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">crawl_sitemap</span><span class="params">(url)</span>:</span></div><div class="line">    <span class="comment"># 爬取首页并寻找所有国家页面</span></div><div class="line">    sitemap = download(url)</div><div class="line">    links = re.findall(<span class="string">'&lt;loc&gt;(.*?)&lt;/loc&gt;'</span>, sitemap)</div><div class="line">    <span class="keyword">for</span> link <span class="keyword">in</span> links:</div><div class="line">        html = download(link)</div></pre></td></tr></table></figure>
+<h4 id="5-ID遍历爬虫"><a href="#5-ID遍历爬虫" class="headerlink" title="5.ID遍历爬虫"></a>5.ID遍历爬虫</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> itertools</div><div class="line"><span class="keyword">for</span> page <span class="keyword">in</span> itertools.count(<span class="number">1</span>):</div><div class="line">    <span class="comment"># 这里使用了一个python中的占位符</span></div><div class="line">    url = <span class="string">'http://example.webscraping.com/view/-%d'</span> % page</div><div class="line">    html = download(url)</div><div class="line">    <span class="comment"># 直到下载错误才停止,可用于数据库ID连续的网站,并且在遇上一些不可控因素的时候会出现错误</span></div><div class="line">    <span class="keyword">if</span> html <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        <span class="keyword">break</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        <span class="keyword">pass</span></div><div class="line"><span class="comment"># 改进版, 只有在发生多次下载失败才会退出脚本</span></div><div class="line">max_errors = <span class="number">5</span></div><div class="line">num_errors = <span class="number">0</span></div><div class="line"><span class="keyword">for</span> page <span class="keyword">in</span> itertools.count(<span class="number">1</span>):</div><div class="line">    url = <span class="string">'http://example.webscraping.com/view/-%d'</span> % page</div><div class="line">    html = download(url)</div><div class="line">    <span class="keyword">if</span> html <span class="keyword">is</span> <span class="keyword">None</span>:</div><div class="line">        num_errors += <span class="number">1</span> <span class="comment">#请注意, python中没有 ++ 运算符</span></div><div class="line">        <span class="keyword">if</span> num_errors == max_errors:</div><div class="line">            <span class="keyword">break</span></div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        num_errors = <span class="number">0</span></div></pre></td></tr></table></figure>
+<h4 id="高级功能"><a href="#高级功能" class="headerlink" title="高级功能"></a>高级功能</h4><p>1.解析 robots.txt<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.robotparser <span class="keyword">as</span> robotparser</div><div class="line">rp = robotparser.RobotFileParser()</div><div class="line"><span class="comment"># 在这个页面上查询可以使用地爬虫user_agent</span></div><div class="line">rp.set_url(<span class="string">'http://www.baidu.com/robots.txt'</span>)</div><div class="line">rp.read()</div><div class="line">url = <span class="string">'http://www.baidu.com'</span></div><div class="line"><span class="comment"># 这里我是随意写的user_agent</span></div><div class="line">user_agent = <span class="string">'sfasf'</span></div><div class="line">rp.can_fetch(user_agent, url) <span class="comment"># False</span></div><div class="line">user_agent = <span class="string">'Googlebot'</span></div><div class="line">rp.can_fetch(user_agent, url) <span class="comment"># True</span></div></pre></td></tr></table></figure></p>
+<p>2.使用<strong>代理</strong></p>
+<p>此处建议使用更加友好的<a href="http://docs.python-requests.org/zh_CN/latest/user/quickstart.html" target="_blank" rel="external">requests模块</a><br>当然,首先要保证你的代理ip是可用的…<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 以下是requests模块的官方例子</span></div><div class="line"><span class="keyword">import</span> requests</div><div class="line"></div><div class="line">proxies = &#123;</div><div class="line">  <span class="string">"http"</span>: <span class="string">"http://10.10.1.10:3128"</span>,</div><div class="line">  <span class="string">"https"</span>: <span class="string">"http://10.10.1.10:1080"</span>,</div><div class="line">&#125;</div><div class="line">requests.get(<span class="string">"http://example.org"</span>, proxies=proxies)</div></pre></td></tr></table></figure></p>
+<p>3.下载限速</p>
+<p>如果我们在爬取网站的速度过快,我们就可能就面临被封禁或是造成服务器过载的风险,为了降低该类风险,我们可以在两次下载网页的时候添加延时,具体操作如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> time</div><div class="line">time.sleep(<span class="number">1</span>) <span class="comment">#延迟一秒</span></div></pre></td></tr></table></figure></p>
+<p>4.避免进入爬虫陷阱,在一些网站中可能会动态生成页面内容,这样就会出现无限多的网页,想要避免陷入爬虫陷阱,我们可以记录到达当前网页经过了多少个链接,这样页面就会无止境地下载下去.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 此处代码以后再补</span></div></pre></td></tr></table></figure></p>
+<h2 id="二、数据抓取"><a href="#二、数据抓取" class="headerlink" title="二、数据抓取"></a>二、数据抓取</h2><h3 id="分析网页"><a href="#分析网页" class="headerlink" title="分析网页"></a>分析网页</h3><p>上面只是讲解了怎么下载当前网页,现在我们来解析当前网页的内容,即抽取网页上我们需要的内容</p>
+<h4 id="1-分析网页"><a href="#1-分析网页" class="headerlink" title="1.分析网页"></a>1.分析网页</h4><p>想要了解一个网页的结构如何,可以采用查看源代码的方法,在大多数浏览器中鼠标右键点击一下即可看见 <strong>查看网页源代码</strong> 选项,在打开的标签页中我们可以找到我们感兴趣的内容,然而面对这一堆html、css、javascript代码看的头都大了,而且由于html的规范极其宽松,缺失空白符和缺少闭合标签的情况时常出现,这对于浏览器没什么关系,但是我们在阅读的时候则会造成一定困难</p>
+<p>在这种情况下我们可以使用浏览器提供的开发者工具,chrome用户和Edge用户可以按下键盘上的<strong>F12</strong>键,Firefox用户可以去下载<a href="https://addons.mozilla.org/zh-CN/firefox/addon/firebug/" target="_blank" rel="external">FireBug扩展</a></p>
+<h4 id="2-三种网页抓取方法"><a href="#2-三种网页抓取方法" class="headerlink" title="2.三种网页抓取方法"></a>2.三种网页抓取方法</h4><h5 id="1-正则表达式"><a href="#1-正则表达式" class="headerlink" title="(1)正则表达式"></a>(1)正则表达式</h5><p>如果对于正则表达式不熟悉的话,可以去查看<a href="http://www.runoob.com/python/python-reg-expressions.html" target="_blank" rel="external">菜鸟教程 Python正则表达式Python正则表达式</a></p>
+<h5 id="2-BeautifulSoup"><a href="#2-BeautifulSoup" class="headerlink" title="(2)BeautifulSoup"></a>(2)BeautifulSoup</h5><p>BeautifulSoup是一个非常流行的python模块,用于解析网页,并提供定位内容的便捷接口,安装命令:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install BeautifulSoup4</div></pre></td></tr></table></figure></p>
+<p>具体使用可参考<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank" rel="external">Beautiful Soup Documentation</a>,或者参考以下代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</div><div class="line">broken_html = <span class="string">'''</span></div><div class="line">&lt;ul class=country&gt; # 属性值两侧缺少引号</div><div class="line">    &lt;li&gt;Area #缺少闭合标签</div><div class="line">    &lt;li&gt;Population&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">'''</div><div class="line"><span class="comment"># 传入一个解析器 html.parser</span></div><div class="line">soup = BeautifulSoup(broken_html, <span class="string">'html.parser'</span>)</div><div class="line">fixed_html = soup.prettify()</div><div class="line">print(fixed_html) <span class="comment"># 正确解析并闭合标签</span></div><div class="line">ul = soup.find(<span class="string">'ul'</span>, attrs=&#123;<span class="string">'class'</span>: <span class="string">'country'</span>&#125;)</div><div class="line">l = ul.find(<span class="string">'li'</span>) <span class="comment"># 寻找第一个li标签</span></div><div class="line">li = ul.find_all(<span class="string">'li'</span>) <span class="comment"># 寻找所有li标签,并放入一个列表中</span></div><div class="line">print(li)</div></pre></td></tr></table></figure></p>
+<h5 id="3-Lxml"><a href="#3-Lxml" class="headerlink" title="(3)Lxml"></a>(3)Lxml</h5><p>lxml使用C语言编写,解析速度相比较BeautifulSoup更快安装使用</p>
+<pre><code>pip install lxml
+</code></pre><p>使用可参见<a href="https://www.cnblogs.com/ospider/p/5911339.html" target="_blank" rel="external">lxml简明教程</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> lxml.html</div><div class="line"></div><div class="line">broken_html = <span class="string">'&lt;ul class=country&gt;&lt;li&gt;Area&lt;li&gt;Population&lt;/ul&gt;'</span></div><div class="line">tree = lxml.html.fromstring(broken_html)</div><div class="line">fixed_html = lxml.html.tostring(tree, pretty_print=<span class="keyword">True</span>)</div><div class="line">print(fixed_html) <span class="comment"># 缺失部分补全</span></div></pre></td></tr></table></figure></p>
+<p>解析完内容后,lxml有几种不同的方法进行选择,如Xpath选择器和类似BeautifulSoup的find()方法,我们这里使用的是css选择器,因为它更加简洁,并且能在解析动态内容的时候进行复用,如果读者拥有jquery选择器的知识的话会比较熟悉该内容<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 此处出现问题</span></div></pre></td></tr></table></figure></p>
+<h5 id="4-给爬虫添加回调函数"><a href="#4-给爬虫添加回调函数" class="headerlink" title="(4)给爬虫添加回调函数"></a>(4)给爬虫添加回调函数</h5><p>有兴趣的可以参见<a href="https://bitbucket.org/wswp/code/src/9e6b82b47087c2ada0e9fdf4f5e037e151975f0f/chapter02/link_crawler.py?at=default&amp;fileviewer=file-view-default" target="_blank" rel="external">https://bitbucket.org/wswp/code/src/9e6b82b47087c2ada0e9fdf4f5e037e151975f0f/chapter02/link_crawler.py?at=default&amp;fileviewer=file-view-default</a></p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/probberechts">Projects</a></li>
+         
+          <li><a href="/URL">LINK_NAME</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#python3网络爬虫-注-以下均在python3-6-3下编写并确认无误-其他版本不能保证无误"><span class="toc-number">1.</span> <span class="toc-text">python3网络爬虫,注:以下均在python3.6.3下编写并确认无误,其他版本不能保证无误</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、爬虫简介"><span class="toc-number">1.1.</span> <span class="toc-text">一、爬虫简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-网络爬虫的具体用途"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">1.网络爬虫的具体用途:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-爬虫是否合法"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">2.爬虫是否合法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-背景调研"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">3.背景调研</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-识别网站所用技术"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">4.识别网站所用技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-寻找网站所有者"><span class="toc-number">1.1.0.5.</span> <span class="toc-text">5.寻找网站所有者</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编写第一个网络爬虫"><span class="toc-number">1.1.1.</span> <span class="toc-text">编写第一个网络爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-下载网页"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1.下载网页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-代理"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">3.代理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-网站地图爬虫"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">4.网站地图爬虫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-ID遍历爬虫"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">5.ID遍历爬虫</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#高级功能"><span class="toc-number">1.1.1.5.</span> <span class="toc-text">高级功能</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、数据抓取"><span class="toc-number">1.2.</span> <span class="toc-text">二、数据抓取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分析网页"><span class="toc-number">1.2.1.</span> <span class="toc-text">分析网页</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-分析网页"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">1.分析网页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-三种网页抓取方法"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">2.三种网页抓取方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-正则表达式"><span class="toc-number">1.2.1.2.1.</span> <span class="toc-text">(1)正则表达式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-BeautifulSoup"><span class="toc-number">1.2.1.2.2.</span> <span class="toc-text">(2)BeautifulSoup</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-Lxml"><span class="toc-number">1.2.1.2.3.</span> <span class="toc-text">(3)Lxml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-给爬虫添加回调函数"><span class="toc-number">1.2.1.2.4.</span> <span class="toc-text">(4)给爬虫添加回调函数</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=missingyouzi.github.io/2017/11/19/python网络爬虫/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&text=python网络爬虫"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&title=python网络爬虫"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&is_video=false&description=python网络爬虫"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=python网络爬虫&body=Check out this article: missingyouzi.github.io/2017/11/19/python网络爬虫/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&title=python网络爬虫"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&title=python网络爬虫"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&title=python网络爬虫"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&title=python网络爬虫"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=missingyouzi.github.io/2017/11/19/python网络爬虫/&name=python网络爬虫&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2017 ZQ
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/probberechts">Projects</a></li>
+         
+          <li><a href="/URL">LINK_NAME</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-86660611-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+
